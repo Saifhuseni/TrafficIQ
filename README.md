@@ -1,5 +1,8 @@
 # **TrafficIQ: AI-Powered Intelligent Traffic Monitoring System with Future Congestion Control Capabilities** 
----
+
+Welcome to the repository for the **AI-Powered Intelligent Traffic Monitoring System with Future Congestion Control Capabilities** project! This project was developed as part of **DU Hacks 4.0** in 2025, held at DDU Nadiad, with the goal of creating an AI-powered intelligent traffic monitoring system for real-time traffic analysis and congestion prediction
+
+
 ![Logo](https://raw.githubusercontent.com/Saifhuseni/TrafficIQ/main/AppPics/logo.jpg)
 
 ## 🚀 **Overview**  
