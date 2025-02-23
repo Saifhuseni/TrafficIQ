@@ -64,15 +64,7 @@ const HomePage = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="w-screen bg-[#1E293B] py-16">
-        <div className="w-full px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <StatCard number="95%" text="Accuracy in Vehicle Detection" />
-            <StatCard number="30%" text="Reduction in Traffic Congestion" />
-            <StatCard number="24/7" text="Real-time Monitoring" />
-          </div>
-        </div>
-      </div>
+      
     </div>
   );
 };
