@@ -1,6 +1,6 @@
 # **TrafficIQ: AI-Powered Intelligent Traffic Monitoring System with Future Congestion Control Capabilities** 
 ---
-![Logo]([https://github.com/yourusername/yourrepo/blob/main/images/yourimage.png?raw=true](https://github.com/Saifhuseni/TrafficIQ/blob/main/AppPics/logo.jpg))
+![Logo](https://raw.githubusercontent.com/Saifhuseni/TrafficIQ/main/AppPics/logo.jpg)
 
 ## 🚀 **Overview**  
 Traffic congestion and road safety continue to pose significant urban challenges, leading to increased travel times, fuel consumption, and accidents. Conventional traffic monitoring systems rely on static signals and lack real-time adaptability, making them inefficient in responding to fluctuating road conditions.
