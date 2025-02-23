@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard';
 import HomePage from './pages/HomePage';
 import Navbar from './components/Layout/Navbar';
 import PredictionForm from './components/PredictionForm';
+import TrafficCongestion from './pages/TrafficCongestion'; 
 
 const App = () => (
   <AuthProvider>
@@ -26,6 +27,7 @@ const App = () => (
           }
         />
         <Route path="/process_video" element={<PredictionForm />} />
+        <Route path="/traffic-congestion" element={<TrafficCongestion />} />
       </Routes>
     </div>
   </AuthProvider>

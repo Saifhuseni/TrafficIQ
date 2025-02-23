@@ -29,7 +29,6 @@ const Navbar = () => {
             >
               Home
             </Link>
-            
             {isAuthenticated ? (
               <>
                 <Link 
@@ -37,6 +36,12 @@ const Navbar = () => {
                   className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                 >
                   Dashboard
+                </Link>
+                <Link 
+                  to="/traffic-congestion" 
+                  className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                >
+                  Traffic Congestion
                 </Link>
                 <button
                   onClick={logout}
@@ -91,7 +96,6 @@ const Navbar = () => {
             >
               Home
             </Link>
-            
             {isAuthenticated ? (
               <>
                 <Link 
@@ -100,6 +104,13 @@ const Navbar = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Dashboard
+                </Link>
+                <Link 
+                  to="/traffic-congestion" 
+                  className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Traffic Congestion
                 </Link>
                 <button
                   onClick={() => {
