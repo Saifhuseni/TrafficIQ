@@ -1,15 +1,15 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
-  const { isAuthenticated, logout } = useContext(AuthContext);
+const Dashboard = () => {
+  const navigate = useNavigate();
 
-  return (
-    
-      <h1>Welcome to the Dashboard!</h1>
-      
-  );
+  useEffect(() => {
+    // Redirect to the prediction form after landing on the dashboard
+    navigate('/process_video');
+  }, [navigate]);
+
+  return <div>Redirecting to Prediction Form...</div>;
 };
 
-export default Navbar;
+export default Dashboard;

@@ -114,7 +114,7 @@ async def process_video(file: UploadFile = File(...)):
 
             # Draw bounding box and id (optional)
             cv2.rectangle(frame, (x3, y3), (x4, y4), (0, 255, 0), 2)
-            cv2.putText(frame, str(obj_id), (x3, y3 - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255,255,255), 2)
+            #cv2.putText(frame, str(obj_id), (x3, y3 - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255,255,255), 2)
 
             # Check vehicle crossing the red line (going down)
             if red_line_y - offset < cy < red_line_y + offset:
@@ -123,7 +123,14 @@ async def process_video(file: UploadFile = File(...)):
                 elapsed_time = time.time() - down[obj_id]
                 if obj_id not in counter_down:
                     counter_down.append(obj_id)
-                    # (Optional) Compute speed if desired
+                    # Calculate speed
+                    pixel_distance = abs(blue_line_y - red_line_y)
+                    scale_factor = real_distance_meters / pixel_distance  # meters per pixel
+                    real_distance_travelled = pixel_distance * scale_factor
+                    speed_ms = real_distance_travelled / elapsed_time  # m/s
+                    speed_kmh = speed_ms * 3.6  # Convert to km/h
+                    
+                    cv2.putText(frame, f"{int(speed_kmh)} km/h", (x4, y4), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 255), 2)
 
             # Check vehicle crossing the blue line (going up)
             if blue_line_y - offset < cy < blue_line_y + offset:
@@ -132,10 +139,14 @@ async def process_video(file: UploadFile = File(...)):
                 elapsed_time = time.time() - up[obj_id]
                 if obj_id not in counter_up:
                     counter_up.append(obj_id)
-                    # (Optional) Compute speed if desired
-
-            # (Optional) Draw center point for debugging
-            cv2.circle(frame, (cx, cy), 4, (0, 0, 255), -1)
+                    # Calculate speed
+                    pixel_distance = abs(red_line_y - blue_line_y)
+                    scale_factor = real_distance_meters / pixel_distance  # meters per pixel
+                    real_distance_travelled = pixel_distance * scale_factor
+                    speed_ms = real_distance_travelled / elapsed_time  # m/s
+                    speed_kmh = speed_ms * 3.6  # Convert to km/h
+                    
+                    cv2.putText(frame, f"{int(speed_kmh)} km/h", (x4, y4), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 255), 2)
         
         # Optionally, annotate the frame with counts
         cv2.putText(frame, f"Down: {len(counter_down)}", (10,30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,0,0), 2)
@@ -144,9 +155,6 @@ async def process_video(file: UploadFile = File(...)):
         
         # Write the frame to the output video file
         out.write(frame)
-        # (Optional) Save individual frames
-        # frame_filename = f'detected_frames/frame_{count}.jpg'
-        # cv2.imwrite(frame_filename, frame)
     
     cap.release()
     out.release()
@@ -157,14 +165,9 @@ async def process_video(file: UploadFile = File(...)):
         "total_vehicles": len(counter_down) + len(counter_up),
         "output_video_url": f"http://localhost:8000/download/{output_filename}"
     }
-
-@app.get("/download/{filename}")
-def download_file(filename: str):
-    file_path = os.path.join(UPLOAD_DIR, filename)
+@app.get("/download_video/")
+async def download_video():
+    file_path = "uploads/output.avi"
     if os.path.exists(file_path):
-        return FileResponse(file_path, media_type="video/avi", filename=filename)
-    else:
-        return {"error": "File not found"}
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+        return FileResponse(file_path, media_type="video/x-msvideo", filename="output.avi")
+    return {"error": "File not found"}
