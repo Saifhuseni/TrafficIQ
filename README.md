@@ -174,4 +174,34 @@ Manually enter coordinates or select a location from the map to check congestion
 
 ---
 
-  
+## 🖼 **App Pics** 
+
+**Homepage**  
+![Homepage](https://github.com/Saifhuseni/TrafficIQ/blob/main/AppPics/Home%20Page.jpg?raw=true)
+
+**Login Page**  
+![Login Page](https://github.com/Saifhuseni/TrafficIQ/blob/main/AppPics/LoginPage.jpg?raw=true)
+
+**Dashboard**  
+![Dashboard](https://github.com/Saifhuseni/TrafficIQ/blob/main/AppPics/Dashboard.jpg?raw=true)
+
+**Prediction Output**  
+![Prediction Output](https://github.com/Saifhuseni/TrafficIQ/blob/main/AppPics/process_videoPage.jpg?raw=true)
+
+**After Prediction**  
+![After Prediction](https://github.com/Saifhuseni/TrafficIQ/blob/main/AppPics/AfterPrediction.jpg?raw=true)
+
+**Prediction Output Speed**  
+![Prediction Output Speed](https://github.com/Saifhuseni/TrafficIQ/blob/main/AppPics/OutputPrediction.jpg?raw=true)
+
+**Congestion Page**  
+![Congestion Page](https://github.com/Saifhuseni/TrafficIQ/blob/main/AppPics/CongestionPage.jpg?raw=true)
+
+**Map Page**  
+![Map Page](https://github.com/Saifhuseni/TrafficIQ/blob/main/AppPics/Map%20Page.jpg?raw=true)
+
+**Congestion**  
+![Congestion](https://github.com/Saifhuseni/TrafficIQ/blob/main/AppPics/Congestion.jpg?raw=true)
+
+**Prediction Output**  
+![Prediction Output](https://github.com/Saifhuseni/TrafficIQ/blob/main/AppPics/process_videoPage.jpg?raw=true)
